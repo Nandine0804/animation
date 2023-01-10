@@ -4,495 +4,241 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SEE IT BUILD IT</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Jost:wght@300;400&display=swap");
-        * {
+        @import url(https://fonts.googleapis.com/css?family=Montserrat);
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-weight: 800;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: "Jost", sans-serif;
-            text-decoration: none;
-            transition: all 0.4s ease-in-out;
         }
         
         body {
-            background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/wood_panels.png");
-            background-size: cover;
-            background-blend-mode: soft-light;
-            background-color: #432206;
-            font-family: "Jost", sans-serif;
+            background: #030321;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .cube {
-            perspective: 1200px;
-            transform-style: preserve-3D;
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: auto;
-            width: 180px;
-            height: 280px;
-            transition: all 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-            top: 10px;
-            transform: rotateY(0deg) rotateX(40deg) rotateZ(-20deg) scale(1);
+        .container {
+            display: flex;
+            max-height: 85%;
+            position: relative;
+            max-width: 60%;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
         }
         
-        .cube_inner {
-            width: 210px;
-            height: 280px;
-            transform-style: preserve-3d;
+        svg {
+            display: block;
+            font: 8em 'Montserrat';
+            width: 960px;
+            height: 300px;
+            margin: 0 auto;
         }
         
-        .cube_inner div {
-            position: absolute;
-            width: 210px;
-            height: 280px;
-            background: #FF2BA2;
-            transform-origin: 50% 50%;
+        .text-copy {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 6% 29%;
+            stroke-width: 3px;
+            stroke-dashoffset: 0%;
+            animation: stroke-offset 5.5s infinite linear;
         }
         
-        .cube_inner div.cube_front {
-            transform-origin: 1px 0px;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            transform: translateZ(6px);
-            transition: transform 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-            background: url("https://qph.cf2.quoracdn.net/main-qimg-21bd681fdfd392bfdab3a01a422d5eb2");
-            background-size: cover !important;
+        .text-copy:nth-child(1) {
+            stroke: #4D163D;
+            animation-delay: -1;
         }
         
-        .cube_inner div.page_left {
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.24);
-            transform-origin: 1px 0px;
-            transition: transform 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-            transform: translateZ(5px -1);
-            opacity: 0.8;
-            background: url("ui.jpg");
-            background-size: cover !important;
+        .text-copy:nth-child(2) {
+            stroke: #840037;
+            animation-delay: -2s;
         }
         
-        .cube_inner div.page_right {
-            transform: translateZ(4px);
-            background: url("ui2.jpg");
-            background-size: cover !important;
+        .text-copy:nth-child(3) {
+            stroke: #BD0034;
+            animation-delay: -3s;
         }
         
-        .cube_inner div.cube_back {
-            transform: translateZ(-5px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        .text-copy:nth-child(4) {
+            stroke: #BD0034;
+            animation-delay: -4s;
         }
         
-        .cube_inner div.cube_left {
-            width: 10px;
-            transform: rotateY(90deg) translateZ(-5px);
-            background-color: #062738;
+        .text-copy:nth-child(5) {
+            stroke: #FDB731;
+            animation-delay: -5s;
         }
         
-        .cube_inner div.cube_right {
-            width: 10px;
-            transform: rotateY(90deg) translateZ(205px);
-            background-color: #d80079;
+        @keyframes stroke-offset {
+            100% {
+                stroke-dashoffset: -35%;
+            }
         }
         
-        .cube_inner div.cube_top {
-            height: 10px;
-            transform: rotateX(90deg) translateZ(5px);
-            background-color: #b00063;
+        .button {
+            margin: 0 auto;
+            display: block;
         }
         
-        .cube_inner div.cube_bottom {
-            height: 10px;
-            transform: rotateX(90deg) translateZ(-275px);
-            background-color: #fff;
-        }
-        
-        hr {
-            background: #400776;
-            width: 16px;
-            float: left;
-            height: 2px;
-            border: none;
-        }
-        
-        .box {
-            background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/wood_panels.png");
-            background-size: cover;
-            width: 700px;
-            background-blend-mode: soft-light;
-            background-color: #432206;
-            height: 400px;
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: auto;
-            box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-            top: 50%;
-            border-radius: 30px;
-            transition: width 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), background-color 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), background-position 0.6s 0.51s ease;
-            transform: translateY(-50%);
-        }
-        
-        .box:hover {
-            width: 660px;
-            background-position: -300px 0px;
-        }
-        
-        .box:hover .cube {
-            transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1) translateY(50px) translateX(-220px);
-        }
-        
-        .box:hover .cube .cube_front {
-            transform: translateZ(5px) rotatey(-179deg);
-        }
-        
-        .box:hover .cube .page_left {
-            transform: translateZ(5px) rotatey(-180deg);
-        }
-        
-        .box:hover .description {
-            left: 426px;
-            top: -10px;
-            height: 160px;
+        button {
             width: 200px;
+            height: 30px;
+            background: rgb(51, 10, 165);
+            border-radius: 40px;
+            outline: none;
+            border: none;
+            margin: 0 auto;
+            display: block;
         }
         
-        .box:hover .pink {
-            transform: scale(1) rotate(-10deg);
-            transition: all 0.7s 0.3s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-        }
-        
-        .box:hover .holder {
-            width: 700px;
-        }
-        
-        .box:hover .big {
-            opacity: 1;
-            top: 180px;
-            left: 180px;
-        }
-        
-        .box:hover .button {
-            z-index: 3;
-            bottom: 82px;
-            left: 510px;
-            background: #110467;
-            box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-        }
-        
-        .box .pink {
-            position: absolute;
-            transition: all 0.7s 0s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-            width: 180px;
-            border-radius: 100px;
-            height: 42px;
-            z-index: 2;
-            background: rgb(212, 5, 5);
-            color: white;
-            left: 160px;
-            top: 22px;
-            text-align: center;
-            line-height: 20px;
-            padding: 12px 0px 0px 0px;
-            font-family: "Jost", sans-serif;
-            box-shadow: 0px 0px 0px rgb(17, 1, 1);
-            transform: scale(0) rotate(-70deg);
-        }
-        
-        .box .holder {
-            transition: all 1s 0.2s;
-            overflow: hidden;
-            min-width: 600px;
-            min-height: 400px;
-            font-family: "Jost", sans-serif;
-            background: transparent;
-            position: absolute;
-        }
-        
-        .box .big {
-            background: #390652;
-            padding: 20px;
-            transition: all 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-            position: absolute;
-            font-family: "Jost", sans-serif;
-            opacity: 1;
-            z-index: 2;
-            top: -176px;
-            left: 90px;
-            color: white;
-            width: 370px;
-        }
-        
-        .box .big hr {
-            background: white;
-            width: 100px;
-        }
-        
-        .box .big h1 {
-            font-size: 21px;
-            margin: 0;
-            font-family: "Jost", sans-serif;
-            font-weight: normal;
-            color: white;
-        }
-        
-        .box .big p {
-            clear: left;
-            margin: 0;
+        button a {
+            text-decoration: none;
+            word-spacing: 5px;
             font-size: 17px;
-            opacity: 0.8;
-            font-family: "Jost", sans-serif;
-            color: whitesemoke;
-        }
-        
-        .box .button {
-            background: #1f0772;
-            position: absolute;
-            bottom: 18px;
-            cursor: pointer;
-            transition: bottom 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), left 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), box-shadow 1s, background-color 1s;
-            z-index: 4;
-            left: 430px;
-            padding: 10px 24px;
             color: white;
-            font-family: "Jost", sans-serif;
-            box-shadow: 0px 0px 0px #f31893;
-            border-radius: 100px;
-            font-size: 12px;
+            transition: all .3s ease-in-out;
+            text-align: center;
         }
         
-        .box .button a {
-            color: white;
-            font-size: 12px;
+        button:hover {
+            box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
         }
         
-        .box .description {
-            transition: all 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-            background: black;
-            position: absolute;
-            height: 90px;
-            z-index: 1;
-            top: 270px;
-            width: 700px;
-            color: white;
-            left: 0px;
-            padding: 15px;
+        button a:hover {
+            letter-spacing: 2px;
         }
         
-        .box .description h1 {
-            font-family: "Jost", sans-serif;
-            font-weight: normal;
-            margin: 0;
-            font-size: 18px;
-        }
-        
-        .box .description p {
-            clear: left;
-            font-family: "Jost", sans-serif;
-            margin: 0;
-            font-weight: normal;
-            font-size: 12px;
-            opacity: 0.8;
+        @media screen and (max-width:8000px) {
+            svg {
+                display: block;
+                font: 7em 'Montserrat';
+                width: 960px;
+                height: 250px;
+                margin: 0 auto;
+            }
+            button {
+                margin: 0 auto;
+                display: block;
+                width: 140px;
+                height: 25px;
+                margin-top: -20px;
+            }
+            button a {
+                font-size: 12px;
+            }
         }
         
         @media screen and (max-width:824px) {
-            body {
-                width: 100%;
+            svg {
+                display: block;
+                font: 7em 'Montserrat';
+                width: 960px;
+                height: 150px;
+                margin: 0 auto;
             }
-            .box {
-                background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/wood_panels.png");
-                background-size: cover;
-                width: 400px;
-                background-blend-mode: soft-light;
-                background-color: #432206;
-                height: 300px;
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: auto;
-                box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-                top: 50%;
-                border-radius: 30px;
-                transition: width 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), background-color 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), background-position 0.6s 0.51s ease;
-                transform: translateY(-50%);
+            button {
+                margin: 0 auto;
+                display: block;
+                width: 100px;
+                height: 20px;
+                margin: -20px -20px;
             }
-            .cube {
-                perspective: 1200px;
-                transform-style: preserve-3D;
-                position: absolute;
-                left: 0px;
-                right: 0;
-                margin: auto;
-                width: 210px;
-                height: 170px;
-                transition: all 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-                top: -40px;
-                transform: rotateY(0deg) rotateX(40deg) rotateZ(-20deg) scale(1);
+            button a {
+                font-size: 9px;
             }
-            .box .description {
-                transition: all 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-                background: black;
-                position: absolute;
-                height: 90px;
-                z-index: 1;
-                top: 210px;
-                width: 400px;
-                color: white;
-                left: 0px;
-                padding: 15px;
+        }
+        
+        @media screen and (max-width:600px) {
+            svg {
+                display: block;
+                font: 7em 'Montserrat';
+                width: 960px;
+                height: 150px;
+                margin: 0 auto;
             }
-            .cube_inner {
-                width: 120px;
-                margin: 100px 70px;
-                height: 190px;
-                transform-style: preserve-3d;
+            button {
+                margin: 0 auto;
+                display: block;
+                width: 100px;
+                height: 20px;
+                margin: -34px -30px;
             }
-            .cube_inner div {
-                position: absolute;
-                width: 120px;
-                height: 190px;
-                background: #FF2BA2;
-                transform-origin: 50% 50%;
+            button a {
+                font-size: 9px;
             }
-            .cube_inner div.cube_front {
-                transform-origin: 1px 0px;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-                transform: translateZ(6px);
-                transition: transform 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-                background: url("https://images.peerspot.com/image/upload/c_scale,f_auto,q_auto,w_200/S7JEnuCUeWGhZXfgta7mqBLA.png");
-                background-size: cover !important;
+        }
+        
+        @media screen and (max-width:400px) {
+            svg {
+                display: block;
+                font: 7em 'Montserrat';
+                width: 960px;
+                height: 150px;
+                margin: 0 auto;
             }
-            .cube_inner div.page_left {
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.24);
-                transform-origin: 1px 0px;
-                transition: transform 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-                transform: translateZ(5px -1);
-                opacity: 0.8;
-                background: url("ui.jpg");
-                background-size: cover !important;
+            button {
+                margin: 0 auto;
+                display: block;
+                width: 100px;
+                height: 20px;
+                margin: -34px -30px;
             }
-            .cube_inner div.page_right {
-                transform: translateZ(4px);
-                background: url("ui2.jpg");
-                background-size: cover !important;
+            button a {
+                font-size: 9px;
             }
-            .cube_inner div.cube_back {
-                transform: translateZ(-5px);
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        @media screen and (max-width:300px) {
+            svg {
+                display: block;
+                font: 7em 'Montserrat';
+                width: 960px;
+                height: 150px;
+                margin: 0 auto;
             }
-            .cube_inner div.cube_left {
-                width: 10px;
-                transform: rotateY(90deg) translateZ(-5px);
-                background-color: #062738;
+            button {
+                margin: 0 auto;
+                display: block;
+                width: 90px;
+                height: 15px;
+                margin: -40px -50px;
             }
-            .cube_inner div.cube_right {
-                width: 10px;
-                transform: rotateY(90deg) translateZ(95px);
-                background-color: #d80079;
-            }
-            .cube_inner div.cube_top {
-                height: 10px;
-                transform: rotateX(90deg) translateZ(5px);
-                background-color: #b00063;
-            }
-            .cube_inner div.cube_bottom {
-                height: 10px;
-                transform: rotateX(90deg) translateZ(-185px);
-                background-color: #fff;
-            }
-            .box .button {
-                background: #1f0772;
-                position: absolute;
-                bottom: 67px;
-                cursor: pointer;
-                transition: bottom 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), left 1s cubic-bezier(0.815, 0.005, 0.18, 1.005), box-shadow 1s, background-color 1s;
-                z-index: 4;
-                left: 300px;
-                padding: 10px 14px;
-                color: white;
-                font-family: "Jost", sans-serif;
-                box-shadow: 0px 0px 0px #f31893;
-                border-radius: 100px;
-                font-size: 12px;
-            }
-            .box .button a {
-                color: white;
-                font-size: 12px;
-            }
-            .box .pink {
-                position: absolute;
-                transition: all 0.7s 0s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-                width: 180px;
-                border-radius: 100px;
-                height: 42px;
-                z-index: 2;
-                background: rgb(212, 5, 5);
-                color: white;
-                left: 160px;
-                top: 80px;
-                text-align: center;
-                line-height: 20px;
-                padding: 12px 0px 0px 0px;
-                font-family: "Jost", sans-serif;
-                box-shadow: 0px 0px 0px rgb(17, 1, 1);
-                transform: scale(0) rotate(10deg);
-            }
-            .box .big {
-                background: #390652;
-                padding: 20px;
-                transition: all 1s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-                position: absolute;
-                font-family: "Jost", sans-serif;
-                opacity: 1;
-                z-index: 2;
-                top: -176px;
-                left: 200px;
-                color: white;
-                width: 370px;
+            button a {
+                font-size: 7px;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <svg viewBox="0 0 960 300">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">SEE IT BUILD IT</text>
+            </symbol>
 
-    <div class='box'>
-        <div class='pink'>
-            UI PATH
-
-        </div>
-        <div class='button'>
-            <a>Register Now</a>
-        </div>
-        <div class='holder'>
-            <div class='big'>
-                <h1>About this event</h1>
-                <hr>
-
-                <p>It offers businesses ways to automate common office tasks for accelerated business change. </p>
+            <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
 
 
-            </div>
+        </svg>
+
+        <div class="button">
+            <button><a href="index.html">BUILD NOW</a></button>
         </div>
-        <div class='description'>
-            <h1>Interested in UIPATH?</h1>
-            <hr>
-            <p>UiPath is a large-scale end-to-end robotic process automation tool.
-            </p>
-        </div>
-        <div class='cube'>
-            <div class='cube_inner'>
-                <div class='cube_front'></div>
-                <div class='page_left'></div>
-                <div class='page_right'></div>
-                <div class='cube_back'></div>
-                <div class='cube_left'></div>
-                <div class='cube_right'></div>
-                <div class='cube_top'></div>
-                <div class='cube_bottom'></div>
-            </div>
-        </div>
+
     </div>
 
 </body>

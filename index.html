@@ -4,248 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEE IT BUILD IT</title>
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Montserrat);
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-            font-weight: 800;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html {
-            background: url('background.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-        
-        body {
-            font-family: Arial;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .container {
-            display: flex;
-            max-height: 85%;
-            position: relative;
-            max-width: 60%;
-            justify-content: space-between;
-            position: relative;
-            flex-wrap: wrap;
-        }
-        
-        svg {
-            display: block;
-            font: 10em 'Montserrat';
-            width: 960px;
-            height: 300px;
-            margin: 0 auto;
-        }
-        
-        .text-copy {
-            fill: none;
-            stroke: white;
-            stroke-dasharray: 6% 29%;
-            stroke-width: 3px;
-            stroke-dashoffset: 0%;
-            animation: stroke-offset 5.5s infinite linear;
-        }
-        
-        .text-copy:nth-child(1) {
-            stroke: #ffffff;
-            animation-delay: -1;
-        }
-        
-        .text-copy:nth-child(2) {
-            stroke: #e4f0e3;
-            animation-delay: -2s;
-        }
-        
-        .text-copy:nth-child(3) {
-            stroke: #e0e1ad;
-            animation-delay: -3s;
-        }
-        
-        .text-copy:nth-child(4) {
-            stroke: #dedfed;
-            animation-delay: -4s;
-        }
-        
-        .text-copy:nth-child(5) {
-            stroke: #cbb9c2;
-            animation-delay: -5s;
-        }
-        
-        @keyframes stroke-offset {
-            100% {
-                stroke-dashoffset: -35%;
-            }
-        }
-        
-        .button {
-            margin: 0 auto;
-            display: block;
-        }
-        
-        button {
-            width: 200px;
-            height: 30px;
-            background: rgb(51, 10, 165);
-            border-radius: 40px;
-            outline: none;
-            border: none;
-            margin: 0 auto;
-            display: block;
-        }
-        
-        button a {
-            text-decoration: none;
-            word-spacing: 5px;
-            font-size: 17px;
-            color: white;
-            transition: all .3s ease-in-out;
-            text-align: center;
-        }
-        
-        button:hover {
-            box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
-        }
-        
-        button a:hover {
-            letter-spacing: 2px;
-        }
-        
-        @media screen and (max-width:8000px) {
-            svg {
-                display: block;
-                font: 8em 'Montserrat';
-                width: 960px;
-                height: 250px;
-                margin: 0 auto;
-            }
-            button {
-                margin: 0 auto;
-                display: block;
-                width: 140px;
-                height: 25px;
-                margin-top: -20px;
-            }
-            button a {
-                font-size: 12px;
-            }
-        }
-        
-        @media screen and (max-width:824px) {
-            svg {
-                display: block;
-                font: 7.6em 'Montserrat';
-                width: 960px;
-                height: 150px;
-                margin: 0 auto;
-            }
-            button {
-                margin: 0 auto;
-                display: block;
-                width: 100px;
-                height: 20px;
-                margin: -20px -20px;
-            }
-            button a {
-                font-size: 9px;
-            }
-        }
-        
-        @media screen and (max-width:600px) {
-            svg {
-                display: block;
-                font: 7.2em 'Montserrat';
-                width: 960px;
-                height: 150px;
-                margin: 0 auto;
-            }
-            button {
-                margin: 0 auto;
-                display: block;
-                width: 100px;
-                height: 20px;
-                margin: -34px -30px;
-            }
-            button a {
-                font-size: 9px;
-            }
-        }
-        
-        @media screen and (max-width:400px) {
-            svg {
-                display: block;
-                font: 7em 'Montserrat';
-                width: 960px;
-                height: 150px;
-                margin: 0 auto;
-            }
-            button {
-                margin: 0 auto;
-                display: block;
-                width: 100px;
-                height: 20px;
-                margin: -34px -30px;
-            }
-            button a {
-                font-size: 9px;
-            }
-        }
-        
-        @media screen and (max-width:300px) {
-            svg {
-                display: block;
-                font: 6.9em 'Montserrat';
-                width: 960px;
-                height: 150px;
-                margin: 0 auto;
-            }
-            button {
-                margin: 0 auto;
-                display: block;
-                width: 90px;
-                height: 15px;
-                margin: -40px -50px;
-            }
-            button a {
-                font-size: 7px;
-            }
-        }
-    </style>
+    <title>Git Set Go</title>
+    <link rel="stylesheet" href="design.css">
 </head>
 
 <body>
-    <div class="container">
-        <svg viewBox="0 0 960 300">
-            <symbol id="s-text">
-                <text text-anchor="middle" x="50%" y="80%">SEE IT BUILD IT</text>
-            </symbol>
-
-            <g class="g-ants">
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-            </g>
-
-
-        </svg>
-
-        <div class="button">
-            <button><a href="index.html">BUILD NOW</a></button>
+    <div class="body">
+        <div class="body__header">
+            <div class="container">
+                <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="" class="header__logo">
+                <div class="box">
+                    <div class="title">
+                        <span class="block"></span>
+                        <h1>GIT SET GO<span></span></h1>
+                    </div>
+                    <div class="role">
+                        <div class="block"></div>
+                        <p>Show how fast you're</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <section>
+            <div class="body__about">
+                <div class="gallery">
+                    <img src="https://www.lffl.org/wp-content/uploads/2020/12/git.jpg" alt="a hot air balloon">
+                    <img src="https://umaar.github.io/experiments/github-3d-logo/render-2.jpg" alt="a sky photo of an old city">
+                    <img src="https://cdn.dribbble.com/users/5101399/screenshots/15366910/media/b52095b3f880b4934c1ed608c496c075.jpg?compress=1&resize=400x300&vertical=top" alt="a small boat">
+                    <img src="https://umaar.github.io/experiments/github-3d-logo/render-1.jpg" alt="a forest">
+                </div>
+
+                <div class="body__text">
+
+                    <p>DESCRIPTION: Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti doloremque voluptatem placeat ullam a nesciunt quaerat voluptatum debitis quas reprehenderit voluptates, enim ducimus modi eos veniam ex nostrum voluptate
+                        qui. Sint deleniti sed asperiores neque fugiat fugit facere in sit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti doloremque voluptatem placeat ullam a nesciunt quaerat voluptatum debitis quas reprehenderit voluptates,
+                        enim ducimus modi eos veniam ex nostrum voluptate qui. Sint deleniti sed asperiores neque fugiat fugit facere in sit</p>
+
+                    <div class="rules">
+                        <h2>RULES TO BE FOLLOWED: </h2>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="list__button">
+                        <h2>YOU NEED:</h2>
+                        <button disabled>TEAM SIZE : 1 - 3 </button>
+                        <button disabled>GIT</button>
+                        <button disabled>LAPTOP MUST </button>
+                    </div>
+                    <div class="rounds ">
+                        <div class="round1 ">
+                            <h2>ROUND 1 : 02 - 02 - 2023</h2>
+                            <p>one of a set of explicit or understood regulations or principles governing conduct or procedure within a particular area of activity..
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="round2 ">
+                            <h2>ROUND 2: 03 - 02 - 2023</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, rerum totam? Eligendi adipisci laudantium ab, deserunt expedita veritatis ex aut exercitationem rem molestiae eum tempora provident blanditiis asperiores
+                                ipsam fugit.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="button ">
+                        <button><a href="# ">REGISTER NOW</a></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+    </div>
+    <div class="coordinate ">
+        <h2>COORDINATORS</h2>
+        <ol>
+            <li>ABCDEFFCJ: 929292929292</li>
+            <li>ABCDEFFCJ: 929292929292</li>
+        </ol>
     </div>
 
 </body>

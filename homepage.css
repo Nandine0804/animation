@@ -534,6 +534,7 @@ body {
     }
     .container {
         height: 100vh;
+        width: 110vw;
     }
     .logo {
         height: 90px;
@@ -554,6 +555,7 @@ body {
     .contact {
         height: 110vh;
         padding: 25px;
+        width: 110vw;
     }
     .content h1 {
         font-size: 50px;
@@ -863,6 +865,7 @@ body {
     }
     .container {
         height: 100vh;
+        width: 110vw;
     }
     .cont-title .image {
         margin-top: 50px;
@@ -1203,7 +1206,7 @@ body {
         margin-left: 30px;
     }
     .about_container img {
-        top: 40%;
+        top: 30%;
         height: 20%;
     }
     .about_container {

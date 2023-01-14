@@ -380,7 +380,7 @@ body {
 @media screen and (max-width: 1370px) {
     .about_container img {
         position: relative;
-        top: 10%;
+        top: 38%;
         left: 17%;
         width: 90px;
         height: 90px;
@@ -393,8 +393,8 @@ body {
     .about_container h1 {
         margin: 10px auto;
     }
-    #about {
-        margin: 160px 0;
+    .about__text p {
+        margin-top: 20px;
     }
 }
 
@@ -459,7 +459,7 @@ body {
         height: 100vh;
     }
     .about_container img {
-        top: 8%;
+        top: 12%;
         left: 25%;
     }
     #about {
@@ -552,7 +552,7 @@ body {
         color: #fff;
     }
     .contact {
-        height: 150vh;
+        height: 110vh;
         padding: 25px;
     }
     .content h1 {
@@ -599,7 +599,7 @@ body {
     }
     .about_container img {
         position: relative;
-        top: 12%;
+        top: 32%;
         left: 32%;
         width: 90px;
         height: 90px;
@@ -608,12 +608,6 @@ body {
         display: flex;
         flex-direction: column-reverse;
         height: 130vh;
-    }
-    #about {
-        margin-top: 180px;
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
     }
     .about_text {
         padding: 25px;
@@ -703,16 +697,6 @@ body {
         width: 110vw;
         overflow-x: hidden;
     }
-    #about button {
-        padding: 8px 20px;
-    }
-    #about {
-        margin-top: 150px;
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        padding: 20px;
-    }
     .about_text h1 {
         font-size: 35px;
         padding: 20px;
@@ -724,6 +708,21 @@ body {
     .about_text {
         padding: 25px;
         margin-left: -10px;
+    }
+    .about_text {
+        width: 440px;
+        margin-top: 120px;
+        margin-left: 30px;
+    }
+    .about_container img {
+        top: 56%;
+        height: 20%;
+    }
+    .about_container {
+        height: 100vh;
+    }
+    .about_text {
+        margin-left: 20px;
     }
 }
 
@@ -808,6 +807,22 @@ body {
     .rocket_3 {
         width: 130px;
     }
+    .about_text {
+        width: 400px;
+        margin-top: 120px;
+        margin-left: 30px;
+    }
+    .about_container img {
+        top: 40%;
+        height: 20%;
+    }
+    .about_container {
+        height: 100vh;
+    }
+    .about_text {
+        font-size: 8px;
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -837,7 +852,7 @@ body {
         color: #fff;
     }
     .contact {
-        height: 130vh;
+        height: 110vh;
         overflow: hidden;
     }
     .content h1 {
@@ -904,27 +919,28 @@ body {
     .col ul li a {
         font-size: 14px;
     }
-    .about_text {
-        width: 400px;
-        margin-top: 120px;
-    }
-    .about_container img {
-        top: 27%;
-        left: 30%;
-    }
-    .about_container {
-        height: 110vh;
-        overflow: hidden;
-    }
-    .about_text {
-        font-size: 10px;
-        margin-left: 10px;
-    }
     .rocket,
     .rocket_1,
     .rocket_2,
     .rocket_3 {
         width: 100px;
+    }
+    .about_text {
+        width: 450px;
+        margin-top: 120px;
+        margin-left: 10px;
+    }
+    .about_container img {
+        top: 27%;
+        width: 80px;
+        height: 80px;
+    }
+    .about_container {
+        height: 100vh;
+    }
+    .about_text {
+        font-size: 7px;
+        margin-left: -10px;
     }
 }
 
@@ -1028,6 +1044,22 @@ body {
     }
     .contactusbox {
         margin-left: -40px;
+    }
+    .about_text {
+        width: 440px;
+        margin-top: 120px;
+        margin-left: 30px;
+    }
+    .about_container img {
+        top: 56%;
+        height: 20%;
+    }
+    .about_container {
+        height: 100vh;
+    }
+    .about_text {
+        font-size: 8px;
+        margin-left: 20px;
     }
 }
 
@@ -1140,12 +1172,13 @@ body {
     }
     .about_container img {
         top: 40%;
+        height: 20%;
     }
     .about_container {
-        height: 120vh;
+        height: 100vh;
     }
     .about_text {
-        font-size: 10px;
+        font-size: 8px;
         margin-left: 20px;
     }
 }
@@ -1257,7 +1290,9 @@ body {
         margin-left: 30px;
     }
     .about_container img {
-        top: 40%;
+        top: 30%;
+        width: 70px;
+        height: 70px;
     }
     .about_container {
         height: 120vh;
